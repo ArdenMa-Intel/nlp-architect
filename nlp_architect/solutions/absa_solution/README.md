@@ -60,6 +60,16 @@ pip install -e nlp-architect
 pip install -r nlp-architect/nlp_architect/solutions/absa_solution/requirements.txt
 ```
 
+- **Server setup (Optonal)**
+
+Replace `USER@REMOTE_HOST` with your username and server's hostname.
+
+```bash
+    ssh USER@REMOTE_HOST
+    export BOKEH_ALLOW_WS_ORIGIN=127.0.0.1:5007
+```
+**Then disconnect from the remote session to update (`Ctrl-D`), to update the environment variable.**
+
 ## Run
 
 ### Served locally
@@ -71,19 +81,9 @@ pip install -r nlp-architect/nlp_architect/solutions/absa_solution/requirements.
 
 ### Served remotely
 
-Replace `USER@REMOTE_HOST` with your username and server's hostname.
-
 ```bash
     ssh USER@REMOTE_HOST -L 5006:REMOTE_HOST:5006
-    export BOKEH_ALLOW_WS_ORIGIN=127.0.0.1:5007
-    python nlp-architect/solutions/absa_solution/ui.py
-```
-
-When running for the first time, close the remote session (`Ctrl-D`) and reconnect, to update the environment variable:
-
-```bash
-    ssh USER@REMOTE_HOST -L 5006:REMOTE_HOST:5006
-    source absa_env/bin/activate
+    source absa_env/bin/activate # if using virtual env
     python nlp-architect/solutions/absa_solution/ui.py
 ```
 
