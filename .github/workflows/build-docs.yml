@@ -54,20 +54,17 @@ jobs:
     - name: Commit documentation changes
       run:  |
         git add ./docs-source/build --force
-        git commit -m "Documentation build from Github Actions"
+        git commit -m "Documentation build via Github Actions"
 
-#    - name: Commit documentation changes
-#      uses: EndBug/add-and-commit@v5
-#      with:
-#        add: ./docs-source/build --force
-#        branch: pages
-#        message: 'Documentation update from Github Actions'
-#      env:
-#        # This is necessary in order to push a commit to the repo
-#        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Leave this line unchanged
-
-    - name: Push documentation changes
+    - name: Push documentation changes to "pages" branch
       uses: ad-m/github-push-action@master
       with:
         branch: pages
         github_token: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: Create PR
+      uses: peter-evans/creat-pull-request@v3
+      with:
+        author: $(git log -1 --pretty=format:'%an') <$(git log -1 --pretty=format:'%ae')>
+        branch: pages
+        title: Documentation changes by create-pull-request action
