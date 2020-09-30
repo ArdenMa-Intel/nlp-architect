@@ -20,6 +20,10 @@ jobs:
       with:
         python-version: 3.6
 
+    - name: Setup pages branch
+      run: |
+        git checkout -b pages || git checkout pages && git pull origin pages
+
     - name: Install dependencies
       run: |
         pip install -U pip setuptools h5py
@@ -28,10 +32,9 @@ jobs:
         python --version
         pip --version
         pip list
-    
+
     - name: Build sphinx documentation
       run: |
-        git checkout -b pages
         sudo apt-get install build-essential
         make -C docs-source html
 
