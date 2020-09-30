@@ -27,6 +27,8 @@ jobs:
         git config pull.rebase true
         git checkout -b pages || git checkout pages
         git pull origin pages || echo "do nothing" > /dev/null
+      # Last two lines are to handle cases where the local and remote "pages"
+      # branch do and don't exist without causing workflow failure
 
     - name: Install dependencies
       run: |
