@@ -21,7 +21,7 @@ Aspect Based Sentiment Analysis (ABSA) Solution
 Overview
 ========
 Aspect Based Sentiment Analysis is the task of co-extracting opinion terms and aspect terms
-(opinion targets) and the relations between them in a given corpus.
+(opinion targets) and the relations between them in a given corpus. !!!!! ADDING MODIFICATION !!!!!
 
 Solution overview
 =================
