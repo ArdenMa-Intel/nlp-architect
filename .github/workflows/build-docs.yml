@@ -1,0 +1,66 @@
+name: build-docs
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-18.04
+    strategy:
+      fail-fast: false
+
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        fetch-depth: 0
+    - name: Set up Python 3.6
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.6
+
+    - name: Install dependencies
+      run: |
+        pip install -U pip setuptools h5py
+        pip3 install -U -e .[all,dev]
+        python -m spacy download en
+        python --version
+        pip --version
+        pip list
+    
+    - name: Build sphinx documentation
+      run: |
+        git checkout -b pages
+        sudo apt-get install build-essential
+        make -C docs-source html
+
+### Uncomment to upload sphinx documentation as an artifact
+#    - name: Upload sphinx html documentation
+#      uses: actions/upload-artifact@v1
+#      with:
+#        name: DocumentationHTML
+#        path: docs-source/build/html/
+
+    - name: Commit documentation changes
+      run:  |
+        git config user.email "$(git log -1 --pretty=format:'%ae')"
+        git config user.name "$(git log -1 --pretty=format:'%an')"
+        git add ./docs-source/build --force
+        git commit -m "Documentation build from Github Actions"
+
+#    - name: Commit documentation changes
+#      uses: EndBug/add-and-commit@v5
+#      with:
+#        add: ./docs-source/build --force
+#        branch: pages
+#        message: 'Documentation update from Github Actions'
+#      env:
+#        # This is necessary in order to push a commit to the repo
+#        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Leave this line unchanged
+
+    - name: Push documentation changes
+      uses: ad-m/github-push-action@master
+      with:
+        branch: pages
+        github_token: ${{ secrets.GITHUB_TOKEN }}
