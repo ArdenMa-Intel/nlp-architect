@@ -63,7 +63,7 @@ jobs:
         github_token: ${{ secrets.GITHUB_TOKEN }}
 
     - name: Create PR
-      uses: peter-evans/creat-pull-request@v3
+      uses: peter-evans/create-pull-request@v3
       with:
         author: $(git log -1 --pretty=format:'%an') <$(git log -1 --pretty=format:'%ae')>
         branch: pages
