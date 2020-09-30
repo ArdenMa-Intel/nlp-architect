@@ -26,7 +26,7 @@ jobs:
         git config user.name "$(git log -1 --pretty=format:'%an')"
         git config pull.rebase true
         git checkout -b pages || git checkout pages
-        git pull origin pages
+        git pull origin pages || echo "do nothing" > /dev/null
 
     - name: Install dependencies
       run: |
