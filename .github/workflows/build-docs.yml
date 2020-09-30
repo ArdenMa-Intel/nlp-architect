@@ -20,9 +20,13 @@ jobs:
       with:
         python-version: 3.6
 
-    - name: Setup pages branch
+    - name: Setup Github config and pages branch
       run: |
-        git checkout -b pages || git checkout pages && git pull origin pages
+        git config user.email "$(git log -1 --pretty=format:'%ae')"
+        git config user.name "$(git log -1 --pretty=format:'%an')"
+        git config pull.rebase true
+        git checkout -b pages || git checkout pages
+        git pull origin pages
 
     - name: Install dependencies
       run: |
@@ -47,8 +51,6 @@ jobs:
 
     - name: Commit documentation changes
       run:  |
-        git config user.email "$(git log -1 --pretty=format:'%ae')"
-        git config user.name "$(git log -1 --pretty=format:'%an')"
         git add ./docs-source/build --force
         git commit -m "Documentation build from Github Actions"
 
