@@ -10,8 +10,6 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-      with:
-        fetch-depth: 0
     - name: Set up Python 3.6
       uses: actions/setup-python@v2
       with:
@@ -50,11 +48,11 @@ jobs:
         cp -rv ./docs-source/build/html ./docs
 
 ### Uncomment to upload sphinx documentation as an artifact
-    - name: Upload sphinx html documentation artifact
-      uses: actions/upload-artifact@v1
-      with:
-        name: DocumentationHTML
-        path: ./docs
+#    - name: Upload sphinx html documentation artifact
+#      uses: actions/upload-artifact@v1
+#      with:
+#        name: DocumentationHTML
+#        path: ./docs
 
     - name: Commit documentation changes
       run:  |
@@ -69,9 +67,9 @@ jobs:
         force: true  # Always update pages branch to most recent commit to master
 
 ### Works, but seems to auto-close PRs if workflow is activated again before merge
-    - name: Create PR
-      uses: peter-evans/create-pull-request@v3
-      with:
-        branch: pages
-        base: master
-        title: Documentation changes by create-pull-request action
+#    - name: Create PR
+#      uses: peter-evans/create-pull-request@v3
+#      with:
+#        branch: pages
+#        base: master
+#        title: Documentation changes by create-pull-request action
