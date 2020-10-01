@@ -46,8 +46,8 @@ jobs:
       run: |
         sudo apt-get install build-essential
         make -C docs-source html
-        rm -rf ./docs
-        cp -r ./docs-source/build/html ./docs
+        rm -rfv ./docs
+        cp -rv ./docs-source/build/html ./docs
 
 ### Uncomment to upload sphinx documentation as an artifact
     - name: Upload sphinx html documentation artifact
