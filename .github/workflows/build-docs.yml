@@ -67,4 +67,5 @@ jobs:
       with:
         author: $(git log -1 --pretty=format:'%an') <$(git log -1 --pretty=format:'%ae')>
         branch: pages
+        base: master
         title: Documentation changes by create-pull-request action
