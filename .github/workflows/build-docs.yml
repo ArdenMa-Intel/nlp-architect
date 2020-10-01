@@ -64,6 +64,7 @@ jobs:
       with:
         branch: pages
         github_token: ${{ secrets.GITHUB_TOKEN }}
+        force: true
 
 ### Works, but seems to auto-close PRs if workflow is activated again before merge
 #    - name: Create PR
