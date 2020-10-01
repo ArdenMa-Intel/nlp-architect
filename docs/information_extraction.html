@@ -1,15 +1,21 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html4" lang="en" >
 <head>
   <meta charset="utf-8">
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Information Extraction &mdash; NLP Architect by Intel® AI Lab 0.5.2 documentation</title>
+  <title>Information Extraction &mdash; NLP Architect by Intel® AI Lab 0.5.4 documentation</title>
   
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/nlp_arch_theme.css" type="text/css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Mono" type="text/css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:100,900" type="text/css" />
 
   
   
@@ -17,7 +23,9 @@
   
 
   
-  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
@@ -31,13 +39,6 @@
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
     
-
-  
-  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="_static/nlp_arch_theme.css" type="text/css" />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Mono" type="text/css" />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:100,900" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Transformers" href="transformers.html" />
@@ -78,6 +79,7 @@
           
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -110,18 +112,8 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#cross-document-co-reference">Cross Document Co-Reference</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id1">Overview</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#sieve-based-system">Sieve-based System</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#results">Results</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#requirements">Requirements</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#configuration">Configuration</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#sieve-based-system-flow">Sieve-based system flow</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#code-example">Code Example</a></li>
-</ul>
-</li>
 <li class="toctree-l2"><a class="reference internal" href="#identifying-semantic-relations">Identifying Semantic Relations</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id4">Overview</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">Overview</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#wikipedia">Wikipedia</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#wordnet">Wordnet</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#verb-ocean">Verb-Ocean</a></li>
@@ -139,28 +131,28 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#noun-phrase-semantic-segmentation">Noun Phrase Semantic Segmentation</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id17">Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id13">Overview</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#model">Model</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id18">Files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id14">Files</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#dataset">Dataset</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#pre-processing-the-data">Pre-processing the data</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#id23">Running Modalities</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#id24">Training</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id25">Inference</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id19">Running Modalities</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id20">Training</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id21">Inference</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#references">References</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#most-common-word-sense">Most Common Word Sense</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id30">Overview</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id31">Dataset</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id34">Running Modalities</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id26">Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id27">Dataset</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id30">Running Modalities</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#dataset-preparation">Dataset Preparation</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id38">Training</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id39">Inference</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id34">Training</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id35">Inference</a></li>
 </ul>
 </li>
 </ul>
@@ -178,7 +170,6 @@
 </ul>
 <p class="caption"><span class="caption-text">Solutions</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="absa_solution.html">Aspect Based Sentiment Analysis</a></li>
 <li class="toctree-l1"><a class="reference internal" href="term_set_expansion.html">Set Expansion</a></li>
 <li class="toctree-l1"><a class="reference internal" href="trend_analysis.html">Trend Analysis</a></li>
 </ul>
@@ -191,6 +182,7 @@
             
           
         </div>
+        
       </div>
     </nav>
 
@@ -229,7 +221,7 @@
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="index.html">Docs</a> &raquo;</li>
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
         
       <li>Information Extraction</li>
     
@@ -300,140 +292,14 @@ For example, if the marking character is “_”, the NP “Natural Language Pro
 </div>
 <p>More details about the hyperparameters at <a class="reference external" href="https://radimrehurek.com/gensim/models/word2vec.html#gensim.models.word2vec.Word2Vec">https://radimrehurek.com/gensim/models/word2vec.html#gensim.models.word2vec.Word2Vec</a> for word2vec and <a class="reference external" href="https://radimrehurek.com/gensim/models/fasttext.html#gensim.models.fasttext.FastText">https://radimrehurek.com/gensim/models/fasttext.html#gensim.models.fasttext.FastText</a> for Fasttext.</p>
 <hr class="docutils" />
-</div>
-</div>
-</div>
-<div class="section" id="cross-document-co-reference">
-<h2>Cross Document Co-Reference<a class="headerlink" href="#cross-document-co-reference" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id1">
-<h3>Overview<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
-<p>Cross Document Coreference resolution is the task of determining which event or entity mentions expressed in language refer to a similar real-world event or entity across different documents in the same topic.</p>
-<p>Definitions:</p>
-<ul class="simple">
-<li><strong>Event mention</strong> refers to verb and action phrases in a document text.</li>
-<li><strong>Entity mentions</strong> refers to object, location, person, time and so on phrases in a document text.</li>
-<li><strong>Document</strong> refers to a text article (with one or more sentences) on a single subject and which contains entity and event mentions.</li>
-<li><strong>Topic</strong> refers to a set of documents the are on the same subject or topic.</li>
-</ul>
-</div>
-<div class="section" id="sieve-based-system">
-<h3>Sieve-based System<a class="headerlink" href="#sieve-based-system" title="Permalink to this headline">¶</a></h3>
-<p>The cross document coreference system provided is a sieve-based system. A sieve is a logical layer that uses a single semantic relation identifier that extracts a certain relation type. See details descriptions of relation identifiers and types of relations in <a class="reference internal" href="#identifying-semantic-relation"><span class="std std-ref">Identifying Semantic Relation</span></a>.</p>
-<p>The sieve-based system consists of a set of configurable sieves. Each sieve uses a computational rule based logic or an external knowledge resource in order to extract semantic relations between event or entity mentions pairs, with the purpose of clustering same or semantically similar relation mentions across multiple documents.</p>
-<p>Refer to <a class="reference internal" href="#configuration">Configuration</a> section below to see how-to configure a sieved-based system.</p>
-</div>
-<div class="section" id="results">
-<h3>Results<a class="headerlink" href="#results" title="Permalink to this headline">¶</a></h3>
-<p>The sieve-based system was tested on ECB+ <a href="#id43"><span class="problematic" id="id2">[1]_</span></a> corpus and evaluated using CoNLL F1 (Pradhan et al., 2014) metric.</p>
-<p>The <a class="reference external" href="http://www.newsreader-project.eu/results/data/the-ecb-corpus/">ECB+</a> corpus component consists of 502 documents that belong to 43 topics, annotated with mentions of events and their times, locations, human and non-human participants as well as with within- and cross-document event and entity coreference information.</p>
-<p>The system achieved the following:</p>
-<ul class="simple">
-<li>Best in class results achieve on ECB+ Entity Cross Document Co-Reference (<strong>69.8% F1</strong>) using the sieves set <em>[Head Lemma, Exact Match, Wikipedia Redirect, Wikipedia Disambiguation and Elmo]</em></li>
-<li>Best in class results achieve on ECB+ Event Cross Document Co-Reference (<strong>79.0% F1</strong>) using the sieves set <em>[Head Lemma, Exact Match, Wikipedia Redirect, Wikipedia Disambiguation and Fuzzy Head]</em></li>
-</ul>
-<table class="docutils footnote" frame="void" id="id3" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label">[1]</td><td>ECB+: Agata Cybulska and Piek Vossen. 2014. Using a sledgehammer to crack a nut? Lexical diversity and event coreference resolution.</td></tr>
-</tbody>
-</table>
-<p>In Proceedings of the 9th international conference on Language Resources and Evaluation (LREC2014)
-ECB+ annotation is held copyright by Agata Cybulska, Piek Vossen and the VU University of Amsterdam.</p>
-</div>
-<div class="section" id="requirements">
-<h3>Requirements<a class="headerlink" href="#requirements" title="Permalink to this headline">¶</a></h3>
-<ol class="arabic simple">
-<li>Make sure all intended relation identifier resources are available and configured properly. Refer to <a class="reference internal" href="#identifying-semantic-relation"><span class="std std-ref">Identifying Semantic Relation</span></a> to see how to use and configure the identifiers.</li>
-<li>Prepare a JSON file with mentions to be used as input for the sieve-based cross document coreference system:</li>
-</ol>
-<div class="highlight-JSON notranslate"><div class="highlight"><pre><span></span>[
-    {
-        &quot;topic_id&quot;: &quot;2_ecb&quot;, #Required (a topic is a set of multiple documents that share the same subject)
-        &quot;doc_id&quot;: &quot;1_10.xml&quot;, #Required (the article or document id this mention belong to)
-        &quot;sent_id&quot;: 0, #Optional (mention sentence number in document)
-        &quot;tokens_number&quot;: [ #Optional (the token number in sentence, will be required when using Within doc entities)
-            13
-        ],
-        &quot;tokens_str&quot;: &quot;Josh&quot;, #Required (the mention text)
-    },
-    {
-        &quot;topic_id&quot;: &quot;2_ecb&quot;, #Required
-        &quot;doc_id&quot;: &quot;1_11.xml&quot;,
-        &quot;sent_id&quot;: 0,
-        &quot;tokens_number&quot;: [
-            3
-        ],
-        &quot;tokens_str&quot;: &quot;Reid&quot;,
-    },
-        ...
-]
-</pre></div>
-</div>
-<ul class="simple">
-<li>An example for an ECB+ entity mentions json file can be found here: <code class="docutils literal notranslate"><span class="pre">&lt;nlp</span> <span class="pre">architect</span> <span class="pre">root&gt;/datasets/ecb/ecb_all_entity_mentions.json</span></code></li>
-<li>An example for an ECB+ event mentions json file can be found here: <code class="docutils literal notranslate"><span class="pre">&lt;nlp</span> <span class="pre">architect</span> <span class="pre">root&gt;/datasets/ecb/ecb_all_event_mentions.json</span></code></li>
-</ul>
-</div>
-<div class="section" id="configuration">
-<h3>Configuration<a class="headerlink" href="#configuration" title="Permalink to this headline">¶</a></h3>
-<p>There are two modes of operation:</p>
-<blockquote>
-<div><ol class="arabic simple">
-<li>Entity mentions cross document coreference - for clustering entity mentions across multiple documents</li>
-<li>Event mentions cross document coreference - for clustering event mentions across multiple document</li>
-</ol>
-</div></blockquote>
-<dl class="docutils">
-<dt>For each mode of operation there is a method for extraction defined in <a class="reference internal" href="generated_api/nlp_architect.models.html#module-nlp_architect.models.cross_doc_sieves" title="nlp_architect.models.cross_doc_sieves"><code class="xref py py-class docutils literal notranslate"><span class="pre">cross_doc_sieves</span></code></a>:</dt>
-<dd><ul class="first last simple">
-<li><code class="docutils literal notranslate"><span class="pre">run_event_coref()</span></code> - running event coreference resolution</li>
-<li><code class="docutils literal notranslate"><span class="pre">run_entity_coref()</span></code> - running entity coreference resolution</li>
-</ul>
-</dd>
-</dl>
-<p>Each mode of operation requires a configuration. The configurations define which sieve should run, in what order and define constraints and thresholds</p>
-<blockquote>
-<div><ul class="simple">
-<li>Use <code class="xref py py-class docutils literal notranslate"><span class="pre">EntitySievesConfiguration</span></code> for configuring the needed sieves for computing events mentions</li>
-<li>Use <code class="xref py py-class docutils literal notranslate"><span class="pre">EntitySievesConfiguration</span></code> for configuring the needed sieves for computing entities mentions</li>
-</ul>
-</div></blockquote>
-<p>Configuring <code class="docutils literal notranslate"><span class="pre">sieves_order</span></code> enables control on the sieve configurations, <code class="docutils literal notranslate"><span class="pre">sieves_order</span></code> is a list of tuples (RelationType, threshold)</p>
-<p>Use <code class="xref py py-class docutils literal notranslate"><span class="pre">SievesResources</span></code> to set the correct paths to all files downloaded or created for the different types of sieves.</p>
-</div>
-<div class="section" id="sieve-based-system-flow">
-<h3>Sieve-based system flow<a class="headerlink" href="#sieve-based-system-flow" title="Permalink to this headline">¶</a></h3>
-<p>The flow of the sieve-based system is identical to both event and entity resolutions:</p>
-<ol class="arabic">
-<li><p class="first">Load all mentions from input file (mentions json file).</p>
-</li>
-<li><p class="first">Separate each mention to a <em>singleton</em> cluster (a cluster initiated with only one mention) and group the clusters by topic (so each topic has a set of clusters that belong to it) according to the input values.</p>
-</li>
-<li><p class="first">Run the configured sieves system iteratively in the order determine in the <code class="docutils literal notranslate"><span class="pre">sieves_order</span></code> configuration parameter, For each sieve:</p>
-<blockquote>
-<div><ol class="arabic simple">
-<li>Go over all clusters in a topic and try to merge 2 clusters at a time with current sieve RelationType</li>
-<li>Continue until no mergers are available using this RelationType</li>
-</ol>
-</div></blockquote>
-</li>
-<li><p class="first">Continue to next sieve and repeat (3.1) on current state of clusters until no more sieves are left to run.</p>
-</li>
-<li><p class="first">Return the clusters results.</p>
-</li>
-</ol>
-<p>See code example below for running a full cross document coreference evaluation or refer to the documentation for further details.</p>
-</div>
-<div class="section" id="code-example">
-<h3>Code Example<a class="headerlink" href="#code-example" title="Permalink to this headline">¶</a></h3>
-<p>You can find code example for running the system at: <code class="docutils literal notranslate"><span class="pre">examples/cross_doc_coref/cross_doc_coref_sieves.py</span></code></p>
 <hr class="docutils" />
 <span class="target" id="identifying-semantic-relation"></span></div>
 </div>
+</div>
 <div class="section" id="identifying-semantic-relations">
 <h2>Identifying Semantic Relations<a class="headerlink" href="#identifying-semantic-relations" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id4">
-<h3>Overview<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id1">
+<h3>Overview<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
 <p>Semantic relation identification is the task of determining whether there is a relation between two entities. Those entities could be event mentions (referring to verbs and actions phrases) or entity mentions (referring to objects, locations, persons, time, etc.).
 Described below are 6 different methods for extraction relations using external data resources: Wikipedia, Wordnet, Word embeddings, Computational, Referent-Dictionary and VerbOcean.</p>
 <p>Each semantic relation identifier below is capable of identifying a set of pre-defined relation types between two events or two entity mentions.</p>
@@ -478,16 +344,16 @@ Described below are 6 different methods for extraction relations using external 
 <li>Use <a class="reference internal" href="generated_api/nlp_architect.data.cdc_resources.relations.html#nlp_architect.data.cdc_resources.relations.wordnet_relation_extraction.WordnetRelationExtraction" title="nlp_architect.data.cdc_resources.relations.wordnet_relation_extraction.WordnetRelationExtraction"><code class="xref py py-class docutils literal notranslate"><span class="pre">WordnetRelationExtraction</span></code></a> to extract relations based on WordNet.</li>
 <li>Support: Event and Entity mentions.</li>
 </ul>
-<div class="section" id="id6">
-<h5>Relation types<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h5>
+<div class="section" id="id3">
+<h5>Relation types<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h5>
 <ul class="simple">
 <li>Derivationally - Terms in different syntactic categories that have the same root form and are semantically related</li>
 <li>Synset - A synonym set; a set of words that are interchangeable in some context without changing the truth value of the preposition in which they are embedded</li>
 </ul>
 <p>See: <a class="reference external" href="https://wordnet.princeton.edu/documentation/wngloss7wn">WordNet Glossary</a> for more details.</p>
 </div>
-<div class="section" id="id7">
-<h5>Initialization options<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h5>
+<div class="section" id="id4">
+<h5>Initialization options<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h5>
 <div class="code python highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># 2 methods for Wordnet extractor initialization (Running on original data or on a sub-set)</span>
 <span class="c1"># Initialization for full data access</span>
 <span class="n">wn_online</span> <span class="o">=</span> <span class="n">WordnetRelationExtraction</span><span class="p">(</span><span class="n">OnlineOROfflineMethod</span><span class="o">.</span><span class="n">ONLINE</span><span class="p">)</span>
@@ -503,8 +369,8 @@ Described below are 6 different methods for extraction relations using external 
 <li>Use <a class="reference internal" href="generated_api/nlp_architect.data.cdc_resources.relations.html#nlp_architect.data.cdc_resources.relations.verbocean_relation_extraction.VerboceanRelationExtraction" title="nlp_architect.data.cdc_resources.relations.verbocean_relation_extraction.VerboceanRelationExtraction"><code class="xref py py-class docutils literal notranslate"><span class="pre">VerboceanRelationExtraction</span></code></a> to extract relations based on <a class="reference external" href="http://demo.patrickpantel.com/demos/verbocean/">Verb-Ocean</a>.</li>
 <li>Support: Event mentions only.</li>
 </ul>
-<div class="section" id="id9">
-<h5>Initialization options<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h5>
+<div class="section" id="id6">
+<h5>Initialization options<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h5>
 <div class="code python highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># 2 method for VerbOcean extractor initialization (with original data or a sub-set)</span>
 <span class="c1"># Initialization for full data access</span>
 <span class="n">vo_online</span> <span class="o">=</span> <span class="n">VerboceanRelationExtraction</span><span class="p">(</span><span class="n">OnlineOROfflineMethod</span><span class="o">.</span><span class="n">ONLINE</span><span class="p">,</span> <span class="n">ROOT_DIR</span> <span class="o">+</span> <span class="s1">&#39;/verbocean.unrefined.2004-05-20.txt&#39;</span><span class="p">)</span>
@@ -521,8 +387,8 @@ Described below are 6 different methods for extraction relations using external 
 <li>Use <a class="reference internal" href="generated_api/nlp_architect.data.cdc_resources.relations.html#nlp_architect.data.cdc_resources.relations.referent_dict_relation_extraction.ReferentDictRelationExtraction" title="nlp_architect.data.cdc_resources.relations.referent_dict_relation_extraction.ReferentDictRelationExtraction"><code class="xref py py-class docutils literal notranslate"><span class="pre">ReferentDictRelationExtraction</span></code></a> to extract relations based on <a class="reference external" href="http://www.aclweb.org/anthology/N13-1110">Referent-Dict</a>.</li>
 <li>Support: Entity mentions only.</li>
 </ul>
-<div class="section" id="id10">
-<h5>Initialization options<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h5>
+<div class="section" id="id7">
+<h5>Initialization options<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h5>
 <div class="code python highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># 2 methods for ReferentDict extractor initialization (with original data or a sub-set)</span>
 <span class="c1"># Initialization for full data access</span>
 <span class="n">ref_dict_onine</span> <span class="o">=</span> <span class="n">ReferentDictRelationExtraction</span><span class="p">(</span><span class="n">OnlineOROfflineMethod</span><span class="o">.</span><span class="n">ONLINE</span><span class="p">,</span> <span class="n">ROOT_DIR</span>   <span class="s1">&#39;/ref.dict1.tsv&#39;</span><span class="p">)</span>
@@ -548,8 +414,8 @@ Mentions. Proceedings of NAACL 2013.</p>
 <li><a class="reference external" href="https://nlp.stanford.edu/projects/glove">Glove</a> - Using pre-trained Glove embeddings</li>
 </ul>
 </div>
-<div class="section" id="id11">
-<h5>Initialization options<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h5>
+<div class="section" id="id8">
+<h5>Initialization options<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h5>
 <div class="code python highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># 4 flavors of Embedding model initialization (running Elmo, Glove or data sub-set of them)</span>
 <span class="c1"># Initialization for Elmo Pre-Trained vectors</span>
 <span class="n">embed_elmo_online</span> <span class="o">=</span> <span class="n">WordEmbaddingRelationExtraction</span><span class="p">(</span><span class="n">EmbeddingMethod</span><span class="o">.</span><span class="n">ELMO</span><span class="p">)</span>
@@ -569,8 +435,8 @@ Mentions. Proceedings of NAACL 2013.</p>
 <li>Use <a class="reference internal" href="generated_api/nlp_architect.data.cdc_resources.relations.html#nlp_architect.data.cdc_resources.relations.computed_relation_extraction.ComputedRelationExtraction" title="nlp_architect.data.cdc_resources.relations.computed_relation_extraction.ComputedRelationExtraction"><code class="xref py py-class docutils literal notranslate"><span class="pre">ComputedRelationExtraction</span></code></a> to extract relations based on rules such as Head match and Fuzzy Fit.</li>
 <li>Support: Event and Entity mentions.</li>
 </ul>
-<div class="section" id="id12">
-<h5>Relation types<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h5>
+<div class="section" id="id9">
+<h5>Relation types<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h5>
 <ul class="simple">
 <li>Exact Match: Mentions are identical</li>
 <li>Fuzzy Match: Mentions are fuzzy similar</li>
@@ -594,8 +460,8 @@ Mentions. Proceedings of NAACL 2013.</p>
 <li>Using Referent-Dict Relation identifier for mentions of <em>‘company’</em> and <em>‘apple’</em> will result with <code class="docutils literal notranslate"><span class="pre">`REFERENT_DICT`</span></code> relation type.</li>
 <li>Using VerbOcean Relation identifier for mentions of <em>‘expedite’</em> and <em>‘accelerate’</em> will result with <code class="docutils literal notranslate"><span class="pre">`VERBOCEAN_MATCH`</span></code> relation type.</li>
 </ul>
-<div class="section" id="id13">
-<h5>Code Example<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h5>
+<div class="section" id="code-example">
+<h5>Code Example<a class="headerlink" href="#code-example" title="Permalink to this headline">¶</a></h5>
 <p>Each relation identifier implements two main methods to identify the relations types:</p>
 <ol class="arabic simple">
 <li><code class="docutils literal notranslate"><span class="pre">extract_all_relations()</span></code> - Extract all supported relations types from this relation model</li>
@@ -698,8 +564,8 @@ The downloaded snapshot can be loaded using the relation identifiers as data inp
 </div>
 <div class="section" id="noun-phrase-semantic-segmentation">
 <h2>Noun Phrase Semantic Segmentation<a class="headerlink" href="#noun-phrase-semantic-segmentation" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id17">
-<h3>Overview<a class="headerlink" href="#id17" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id13">
+<h3>Overview<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h3>
 <p>Noun-Phrase (NP) is a phrase which has a noun (or pronoun) as its head and zero or more dependent modifiers.
 Noun-Phrase is the most frequently occurring phrase type and its inner segmentation is critical for understanding the
 semantics of the Noun-Phrase.
@@ -727,8 +593,8 @@ for the given NP.</p>
 <p>For the examples above the classifier will output 1 (==Collocation) for <code class="docutils literal notranslate"><span class="pre">hot</span> <span class="pre">dog</span></code> and output 0 (== not collocation)
 for <code class="docutils literal notranslate"><span class="pre">hot</span> <span class="pre">pizza</span></code>.</p>
 </div>
-<div class="section" id="id18">
-<h3>Files<a class="headerlink" href="#id18" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id14">
+<h3>Files<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><a class="reference internal" href="generated_api/nlp_architect.models.html#nlp_architect.models.np_semantic_segmentation.NpSemanticSegClassifier" title="nlp_architect.models.np_semantic_segmentation.NpSemanticSegClassifier"><code class="xref py py-class docutils literal notranslate"><span class="pre">NpSemanticSegClassifier</span></code></a>: is the MLP classifier model.</li>
 <li><strong>examples/np_semantic_segmentation/data.py</strong>: Prepare string data for both <code class="docutils literal notranslate"><span class="pre">train.py</span></code> and <code class="docutils literal notranslate"><span class="pre">inference.py</span></code> using pre-trained word embedding, NLTKCollocations score, Wordnet and wikidata.</li>
@@ -744,7 +610,7 @@ contains the Noun-Phrase string (a Noun-Phrase containing 2 words), and
 the second column contains the correct label (if the 2 word Noun-Phrase
 is a collocation - the label is 1, else 0)</p>
 <p>If you wish to use an existing dataset for training the model, you can
-download Tratz 2011 et al. dataset <a href="#id44"><span class="problematic" id="id19">[1]_</span></a> <a href="#id45"><span class="problematic" id="id20">[2]_</span></a> <a href="#id46"><span class="problematic" id="id21">[3]_</span></a> <a class="footnote-reference" href="#id29" id="id22">[4]</a> from the following link: <a class="reference external" href="https://vered1986.github.io/papers/Tratz2011_Dataset.tar.gz">Tratz
+download Tratz 2011 et al. dataset <a href="#id39"><span class="problematic" id="id15">[1]_</span></a> <a href="#id40"><span class="problematic" id="id16">[2]_</span></a> <a href="#id41"><span class="problematic" id="id17">[3]_</span></a> <a class="footnote-reference" href="#id25" id="id18">[4]</a> from the following link: <a class="reference external" href="https://vered1986.github.io/papers/Tratz2011_Dataset.tar.gz">Tratz
 2011
 Dataset</a>.
 Is also available in
@@ -787,10 +653,10 @@ WordNet.</li>
 </div>
 </div>
 </div>
-<div class="section" id="id23">
-<h3>Running Modalities<a class="headerlink" href="#id23" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="id24">
-<h4>Training<a class="headerlink" href="#id24" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id19">
+<h3>Running Modalities<a class="headerlink" href="#id19" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id20">
+<h4>Training<a class="headerlink" href="#id20" title="Permalink to this headline">¶</a></h4>
 <p>The command <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">examples/np_semantic_segmentation/train.py</span></code> will train the MLP classifier and
 evaluate it. After training is done, the model is saved automatically:</p>
 <p>Quick example:</p>
@@ -800,8 +666,8 @@ evaluate it. After training is done, the model is saved automatically:</p>
 </pre></div>
 </div>
 </div>
-<div class="section" id="id25">
-<h4>Inference<a class="headerlink" href="#id25" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id21">
+<h4>Inference<a class="headerlink" href="#id21" title="Permalink to this headline">¶</a></h4>
 <p>In order to run inference you need to have pre-trained
 <code class="docutils literal notranslate"><span class="pre">&lt;model_name&gt;.h5</span></code> &amp; <code class="docutils literal notranslate"><span class="pre">&lt;model_name&gt;.json</span></code> files and data CSV file that was generated by
 <code class="docutils literal notranslate"><span class="pre">prepare_data.py</span></code>. The result of <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">inference.py</span></code> is a CSV
@@ -819,28 +685,28 @@ data.</p>
 </div>
 <div class="section" id="references">
 <h3>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h3>
-<table class="docutils footnote" frame="void" id="id26" rules="none">
+<table class="docutils footnote" frame="void" id="id22" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
 <tr><td class="label">[1]</td><td>Stephen Tratz and Eduard Hovy. 2011. A Fast, Accurate, Non-Projective, Semantically-Enriched Parser. In Proceedings of the 2011 Conference on Empirical Methods in Natural Language Processing. Edinburgh, Scotland, UK.</td></tr>
 </tbody>
 </table>
-<table class="docutils footnote" frame="void" id="id27" rules="none">
+<table class="docutils footnote" frame="void" id="id23" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
 <tr><td class="label">[2]</td><td>Dirk Hovy, Stephen Tratz, and Eduard Hovy. 2010. What’s in a Preposition? Dimensions of Sense Disambiguation for an Interesting Word Class. In Proceedings of COLING 2010: Poster Volume. Beijing, China.</td></tr>
 </tbody>
 </table>
-<table class="docutils footnote" frame="void" id="id28" rules="none">
+<table class="docutils footnote" frame="void" id="id24" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
 <tr><td class="label">[3]</td><td>Stephen Tratz and Dirk Hovy. 2009. Disambiguation of Preposition Sense using Linguistically Motivated Features. In Proceedings of Human Language Technologies: The 2009 Annual Conference of the North American Chapter of the Association for Computational Linguistics, Companion Volume: Student Research Workshop and Doctoral Consortium. Boulder, Colorado.</td></tr>
 </tbody>
 </table>
-<table class="docutils footnote" frame="void" id="id29" rules="none">
+<table class="docutils footnote" frame="void" id="id25" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id22">[4]</a></td><td>Stephen Tratz and Eduard Hovy. 2010. A Taxonomy, Dataset, and Classifier for Automatic Noun Compound Interpretation. In Proceedings of the 48th Annual Meeting of the Association for Computational Linguistics. Uppsala, Sweden</td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id18">[4]</a></td><td>Stephen Tratz and Eduard Hovy. 2010. A Taxonomy, Dataset, and Classifier for Automatic Noun Compound Interpretation. In Proceedings of the 48th Annual Meeting of the Association for Computational Linguistics. Uppsala, Sweden</td></tr>
 </tbody>
 </table>
 <hr class="docutils" />
@@ -848,8 +714,8 @@ data.</p>
 </div>
 <div class="section" id="most-common-word-sense">
 <h2>Most Common Word Sense<a class="headerlink" href="#most-common-word-sense" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id30">
-<h3>Overview<a class="headerlink" href="#id30" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id26">
+<h3>Overview<a class="headerlink" href="#id26" title="Permalink to this headline">¶</a></h3>
 <p>The most common word sense algorithm’s goal is to extract the most common sense of a target word.
 The input to the algorithm is the target word and the output are the senses of the target word where
 each sense is scored according to the most commonly used sense in the language.
@@ -880,14 +746,14 @@ The feature vector consists of:</p>
 </ul>
 <p>The model above is implemented in the <a class="reference internal" href="generated_api/nlp_architect.models.html#nlp_architect.models.most_common_word_sense.MostCommonWordSense" title="nlp_architect.models.most_common_word_sense.MostCommonWordSense"><code class="xref py py-class docutils literal notranslate"><span class="pre">MostCommonWordSense</span></code></a> class.</p>
 </div>
-<div class="section" id="id31">
-<h3>Dataset<a class="headerlink" href="#id31" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id27">
+<h3>Dataset<a class="headerlink" href="#id27" title="Permalink to this headline">¶</a></h3>
 <p>The training module requires a gold standard csv file which is list of target_words where each word
 is associated with a CLASS_LABEL - a correct (true example) or an incorrect (false example) sense.
 The sense consists of the definition and the inherited hypernyms of the target word in a specific sense.
 The user needs to prepare this gold standard csv file in advance.
 The file should include the following 4 columns:</p>
-<p><a href="#id32"><span class="problematic" id="id33">|</span></a>TARGET_WORD|DEFINITION|SEMANTIC_BRANCH|CLASS_LABEL</p>
+<p><a href="#id28"><span class="problematic" id="id29">|</span></a>TARGET_WORD|DEFINITION|SEMANTIC_BRANCH|CLASS_LABEL</p>
 <p>where:</p>
 <ol class="arabic simple">
 <li>TARGET_WORD: the word that you want to get the most common sense of.</li>
@@ -897,12 +763,12 @@ The file should include the following 4 columns:</p>
 </ol>
 <p>Store the file in the data folder of the project.</p>
 </div>
-<div class="section" id="id34">
-<h3>Running Modalities<a class="headerlink" href="#id34" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id30">
+<h3>Running Modalities<a class="headerlink" href="#id30" title="Permalink to this headline">¶</a></h3>
 <div class="section" id="dataset-preparation">
 <h4>Dataset Preparation<a class="headerlink" href="#dataset-preparation" title="Permalink to this headline">¶</a></h4>
 <p>The script prepare_data.py uses the gold standard csv file as described in the requirements section above
-using pre-trained Google News Word2vec model <a href="#id47"><span class="problematic" id="id35">[1]_</span></a> <a href="#id48"><span class="problematic" id="id36">[2]_</span></a> <a href="#id49"><span class="problematic" id="id37">[3]_</span></a>. Pre-trained Google News Word2vec model can be download <a class="reference external" href="https://drive.google.com/file/d/0B7XkCwpI5KDYNlNUTTlSS21pQmM/edit?usp=sharing">here</a>.
+using pre-trained Google News Word2vec model <a href="#id42"><span class="problematic" id="id31">[1]_</span></a> <a href="#id43"><span class="problematic" id="id32">[2]_</span></a> <a href="#id44"><span class="problematic" id="id33">[3]_</span></a>. Pre-trained Google News Word2vec model can be download <a class="reference external" href="https://drive.google.com/file/d/0B7XkCwpI5KDYNlNUTTlSS21pQmM/edit?usp=sharing">here</a>.
 The terms and conditions of the data set license apply. Intel does not grant any rights to the data files.</p>
 <div class="code python highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="n">examples</span><span class="o">/</span><span class="n">most_common_word_sense</span><span class="o">/</span><span class="n">prepare_data</span><span class="o">.</span><span class="n">py</span> <span class="o">--</span><span class="n">gold_standard_file</span> <span class="n">data</span><span class="o">/</span><span class="n">gold_standard</span><span class="o">.</span><span class="n">csv</span>
      <span class="o">--</span><span class="n">word_embedding_model_file</span> <span class="n">pretrained_models</span><span class="o">/</span><span class="n">GoogleNews</span><span class="o">-</span><span class="n">vectors</span><span class="o">-</span><span class="n">negative300</span><span class="o">.</span><span class="n">bin</span>
@@ -911,16 +777,16 @@ The terms and conditions of the data set license apply. Intel does not grant any
 </pre></div>
 </div>
 </div>
-<div class="section" id="id38">
-<h4>Training<a class="headerlink" href="#id38" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id34">
+<h4>Training<a class="headerlink" href="#id34" title="Permalink to this headline">¶</a></h4>
 <p>Trains the MLP classifier (<a class="reference internal" href="generated_api/nlp_architect.models.html#nlp_architect.models.most_common_word_sense.MostCommonWordSense" title="nlp_architect.models.most_common_word_sense.MostCommonWordSense"><code class="xref py py-class docutils literal notranslate"><span class="pre">model</span></code></a>) and evaluate it.</p>
 <div class="code python highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="n">examples</span><span class="o">/</span><span class="n">most_common_word_sense</span><span class="o">/</span><span class="n">train</span><span class="o">.</span><span class="n">py</span> <span class="o">--</span><span class="n">data_set_file</span> <span class="n">data</span><span class="o">/</span><span class="n">data_set</span><span class="o">.</span><span class="n">pkl</span>
                <span class="o">--</span><span class="n">model</span> <span class="n">data</span><span class="o">/</span><span class="n">wsd_classification_model</span><span class="o">.</span><span class="n">h5</span>
 </pre></div>
 </div>
 </div>
-<div class="section" id="id39">
-<h4>Inference<a class="headerlink" href="#id39" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id35">
+<h4>Inference<a class="headerlink" href="#id35" title="Permalink to this headline">¶</a></h4>
 <div class="code python highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="n">examples</span><span class="o">/</span><span class="n">most_common_word_sense</span><span class="o">/</span><span class="n">inference</span><span class="o">.</span><span class="n">py</span> <span class="o">--</span><span class="n">max_num_of_senses_to_search</span> <span class="mi">3</span>
      <span class="o">--</span><span class="n">input_inference_examples_file</span> <span class="n">data</span><span class="o">/</span><span class="n">input_inference_examples</span><span class="o">.</span><span class="n">csv</span>
      <span class="o">--</span><span class="n">word_embedding_model_file</span> <span class="n">pretrained_models</span><span class="o">/</span><span class="n">GoogleNews</span><span class="o">-</span><span class="n">vectors</span><span class="o">-</span><span class="n">negative300</span><span class="o">.</span><span class="n">bin</span>
@@ -934,19 +800,19 @@ a single column wherein each entry in this column is a different target word</p>
 <p class="first admonition-title">Note</p>
 <p class="last">The results are printed to the terminal using different colors therefore using a white terminal background is best to view the results</p>
 </div>
-<table class="docutils footnote" frame="void" id="id40" rules="none">
+<table class="docutils footnote" frame="void" id="id36" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
 <tr><td class="label">[1]</td><td>Tomas Mikolov, Kai Chen, Greg Corrado, and Jeffrey Dean. Efficient Estimation of Word Representations in Vector Space. In Proceedings of Workshop at ICLR, 2013.</td></tr>
 </tbody>
 </table>
-<table class="docutils footnote" frame="void" id="id41" rules="none">
+<table class="docutils footnote" frame="void" id="id37" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
 <tr><td class="label">[2]</td><td>Tomas Mikolov, Ilya Sutskever, Kai Chen, Greg Corrado, and Jeffrey Dean. Distributed Representations of Words and Phrases and their Compositionality. In Proceedings of NIPS, 2013.</td></tr>
 </tbody>
 </table>
-<table class="docutils footnote" frame="void" id="id42" rules="none">
+<table class="docutils footnote" frame="void" id="id38" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
 <tr><td class="label">[3]</td><td>Tomas Mikolov, Wen-tau Yih, and Geoffrey Zweig. Linguistic Regularities in Continuous Space Word Representations. In Proceedings of NAACL HLT, 2013.</td></tr>
@@ -971,7 +837,14 @@ a single column wherein each entry in this column is a different target word</p>
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -982,7 +855,6 @@ a single column wherein each entry in this column is a different target word</p>
 
   </div>
   
-
 
   <script type="text/javascript">
       jQuery(function () {
