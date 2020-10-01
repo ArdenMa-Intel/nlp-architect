@@ -64,7 +64,7 @@ jobs:
       with:
         branch: pages
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        force: true
+        force: true  # Always update pages branch to most recent commit to master
 
 ### Works, but seems to auto-close PRs if workflow is activated again before merge
 #    - name: Create PR
